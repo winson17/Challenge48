@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <button style="display:  flex-end;" type="button" class="btn btn-secondary">Ajouter Patient </button>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Age</th>
+                <th scope="col">Poids</th>
+                <th scope="col">Taille</th>
+                <th scope="col">Maladie</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <dl class="list-group-item list-group-item-action">
+                {% for p in patients %}
+                    <dt>ID</dt><dd scope="col">{{p.id}}</dd>
+                    <dt>user_id</dt><dd scope="row">{{p.user_id }}</dd>
+                    <dt>age</dt><dd scope="col">{{ p.age }}</dd>
+                    <dt>weight</dt><dd scope="col">{{ p.weight }}</dd>
+                    <dt>height</dt><dd scope="col">{{ p.height }}</dd>
+                    <dt>pathology_id</dt><dd scope="col">{{ p.paddology_id }}</dd>
+                {% endfor %}
+            </dl>
+    </table>
+</body>
+
+</html>
